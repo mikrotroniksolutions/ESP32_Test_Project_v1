@@ -41,7 +41,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        gcovr: true
+        gcov: true
         token: ${{ secrets.CODECOV_TOKEN }}
         run: |
           # Replace `linux` below with the appropriate OS
