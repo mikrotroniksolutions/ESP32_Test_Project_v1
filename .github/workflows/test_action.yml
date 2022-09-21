@@ -39,8 +39,9 @@ jobs:
     
     - name: Run native
       run: |
-        chmod +x .pio/build/native/program
-        ./.pio/build/native/program
+        cd .pio/build/native/
+        chmod +x program
+        ./program
 
     # Code coverage
     - name: Upload coverage to Codecov
