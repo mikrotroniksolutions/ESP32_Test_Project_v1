@@ -1,28 +1,15 @@
 #if defined(ARDUINO)
 #include <Arduino.h>
 
+#include "calc.h"
+calc mycal;
 // cppcheck-suppress unusedFunction
 void setup() {
     // put your setup code here, to run once:
-    uint8_t *ptr1 = (uint8_t *)malloc(512);
-    uint8_t *ptr2 = (uint8_t *)malloc(512);
-    uint8_t *ptr3 = (uint8_t *)malloc(512);
-
-    (void)ptr1;
-    (void)ptr2;
-    (void)ptr3;
-
-    free(ptr1);
-    free(ptr2);
-    free(ptr3);
-    int a = 10;
-    if (a < 5) {
-        Serial.println("How");
-    } else if (a < 7) {
-        Serial.println("Are");
-    } else {
-        Serial.println("You");
-    }
+    mycal.add(1, 2);
+    mycal.sub(1, 2);
+    mycal.div(1, 2);
+    mycal.mul(1, 2);
 }
 
 // cppcheck-suppress unusedFunction
@@ -31,15 +18,14 @@ void loop() {
 }
 #else
 #include <stdio.h>
+
+#include "calc.h"
+calc mycal;
 int main(int argc, char **argv) {
-    int a = 10;
-    if (a < 5) {
-        printf("How");
-    } else if (a < 7) {
-        printf("Are");
-    } else {
-        printf("You");
-    }
+    mycal.add(1, 2);
+    mycal.sub(1, 2);
+    mycal.div(1, 2);
+    mycal.mul(1, 2);
     return 0;
 }
 #endif

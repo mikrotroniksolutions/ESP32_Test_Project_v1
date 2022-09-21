@@ -36,7 +36,12 @@ jobs:
       run: |
         pip install gcovr
         gcovr -o coverage.xml
-      
+    
+    - name: Run native
+      run: |
+        chmod +x .pio/build/native/program
+        ./.pio/build/native/program
+
     # Code coverage
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
