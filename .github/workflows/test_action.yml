@@ -31,11 +31,11 @@ jobs:
     - name: Run platformIO
       run: platformio check && platformio run
     
-    - name: Run native
-      run: |
-        cd .pio/build/native/
-        chmod +x program
-        ./program
+#     - name: Run native
+#       run: |
+#         cd .pio/build/native/
+#         chmod +x program
+#         ./program
 
     # Code coverage
     - name: Upload coverage to Codecov
