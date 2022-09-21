@@ -36,22 +36,14 @@ jobs:
         cd .pio/build/native/
         chmod +x program
         ./program
-        
-     # Setting Up gcovr
-    - name: Running gcovr
-      run: |
-        pip install gcovr
-        gcovr -o coverage.xml
-    
-    
 
     # Code coverage
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
+        gcov: true
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         verbose: true # optional (default = false)
-        files: coverage.xml
 #       run: |
 #         # Replace `linux` below with the appropriate OS
 #         # Options are `alpine`, `linux`, `macos`, `windows`
