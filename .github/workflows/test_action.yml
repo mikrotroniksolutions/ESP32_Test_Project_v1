@@ -39,6 +39,12 @@ jobs:
         gcov: true
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         verbose: true # optional (default = false)
+    - name: Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware.bin 
+        path: |
+          .pio/build/esp32_doit_v1/firmware.bin
           
   test:
     runs-on: ubuntu-latest
