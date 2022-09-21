@@ -15,6 +15,14 @@ void setup() {
     free(ptr1);
     free(ptr2);
     free(ptr3);
+    int a = 10;
+    if (a < 5) {
+        Serial.println("How");
+    } else if (a < 7) {
+        Serial.println("Are");
+    } else {
+        Serial.println("You");
+    }
 }
 
 // cppcheck-suppress unusedFunction
@@ -22,7 +30,16 @@ void loop() {
     // put your main code here, to run repeatedly:
 }
 #else
+#include <stdio.h>
 int main(int argc, char **argv) {
+    int a = 10;
+    if (a < 5) {
+        printf("How");
+    } else if (a < 7) {
+        printf("Are");
+    } else {
+        printf("You");
+    }
     return 0;
 }
 #endif

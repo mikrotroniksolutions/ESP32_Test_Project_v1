@@ -30,7 +30,7 @@ jobs:
 
     - name: Run platformIO
       run: platformio check && platformio run
-    
+
      # Setting Up gcovr
     - name: Running gcovr
       run: |
