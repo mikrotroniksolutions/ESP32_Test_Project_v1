@@ -1,4 +1,4 @@
-name: test_action on push
+name: CI/CD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -41,8 +41,9 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        gcov: true
         token: ${{ secrets.CODECOV_TOKEN }}
+        verbose: true # optional (default = false)
+        files: coverage.xml
         run: |
           # Replace `linux` below with the appropriate OS
           # Options are `alpine`, `linux`, `macos`, `windows`
