@@ -34,10 +34,11 @@ jobs:
       run: platformio check && platformio run
     
     - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
       with:
-          gcov: true
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          verbose: true # optional (default = false)
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        verbose: true # optional (default = false)
+        files: coverage.xml
           
   test:
     runs-on: ubuntu-latest
