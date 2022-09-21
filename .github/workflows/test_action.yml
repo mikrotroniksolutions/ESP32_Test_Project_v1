@@ -44,7 +44,7 @@ jobs:
       with:
         name: firmware.bin 
         path: |
-          .pio/build/esp32_doit_v1/firmware.bin
+          .pio/build/esp32doit-devkit-v1/firmware.bin
           
   test:
     runs-on: ubuntu-latest
