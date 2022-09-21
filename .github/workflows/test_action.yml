@@ -32,7 +32,13 @@ jobs:
 
     - name: Run platformIO
       run: platformio check && platformio run
-  
+    
+    - name: Upload coverage to Codecov
+      with:
+          gcov: true
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          verbose: true # optional (default = false)
+          
   test:
     runs-on: ubuntu-latest
     needs: [build]
@@ -41,14 +47,4 @@ jobs:
       - name: Running Test
         run: echo done
  
-  codecov:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          gcov: true
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          verbose: true # optional (default = false)
 
