@@ -30,7 +30,13 @@ jobs:
 
     - name: Run platformIO
       run: platformio check && platformio run
-
+    
+     # Setting Up gcovr
+    - name: Running gcovr
+      run: |
+        pip install gcovr
+        gcovr -o coverage.xml
+      
     # Code coverage
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
