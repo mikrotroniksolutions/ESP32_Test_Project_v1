@@ -37,6 +37,7 @@ jobs:
       - name: Running Test
         run: |
           platformio test -e native
+          pip install gcovr
           gcovr -o cov.xml
           
       - name: Upload coverage to Codecov
