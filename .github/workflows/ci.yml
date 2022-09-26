@@ -36,7 +36,7 @@ jobs:
 
       - name: Running Test
         run: |
-          platfromio test -e native
+          platformio test -e native
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
