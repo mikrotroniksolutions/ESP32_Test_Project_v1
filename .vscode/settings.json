@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "list": "cpp"
+    }
+}
