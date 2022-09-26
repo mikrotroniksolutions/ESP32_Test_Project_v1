@@ -37,7 +37,8 @@ jobs:
       - name: Running Test
         run: |
           platformio test -e native
-
+          gcovr -o cov.xml
+          
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
