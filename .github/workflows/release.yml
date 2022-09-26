@@ -21,8 +21,14 @@ jobs:
         id: arduino
         run: |
           FILENAME=ESP32_Test_Project-${{ steps.init.outputs.tag }}.zip
-          chmod +x extras/scripts/build-arduino-package.sh
-          extras/scripts/build-arduino-package.sh . "$FILENAME"
+          rm -f "$FILENAME"
+          7z a "$FILENAME" \
+          -xr!.vs \
+          src \
+          lib \
+          include \
+          test \
+          README.md
           echo ::set-output name=filename::$FILENAME
       - name: Create release
         uses: ncipollo/release-action@v1
