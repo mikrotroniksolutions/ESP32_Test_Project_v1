@@ -29,8 +29,6 @@ TEST(ATMMachine, Withdraw) {
         .Times(AtLeast(1));
     EXPECT_CALL(bank, Disconnect)
         .Times(AtLeast(1));
-    EXPECT_CALL(bank, Credit);
-        // .Times(AtLeast(1));
     EXPECT_CALL(bank, GetBalance)
         .Times(AtLeast(1)).WillRepeatedly(Return(2000));
 
