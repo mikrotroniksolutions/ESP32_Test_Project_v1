@@ -21,7 +21,7 @@ jobs:
         id: arduino
         run: |
           FILENAME=ESP32_Test_Project-${{ steps.init.outputs.tag }}.zip
-          chmod +x extras/cripts/build-arduino-package.sh
+          chmod +x extras/scripts/build-arduino-package.sh
           extras/scripts/build-arduino-package.sh . "$FILENAME"
           echo ::set-output name=filename::$FILENAME
       - name: Create release
