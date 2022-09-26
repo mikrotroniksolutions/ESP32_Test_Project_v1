@@ -34,7 +34,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           bodyFile: ${{ steps.body.outputs.filename }}
-          draft: true
+          draft: false
           name: ArduinoJson ${{ steps.init.outputs.version }}
           artifacts: ${{ steps.arduino.outputs.filename }}
           token: ${{ secrets.GITHUB_TOKEN }}
