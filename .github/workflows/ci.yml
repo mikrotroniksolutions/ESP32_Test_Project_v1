@@ -34,6 +34,10 @@ jobs:
       - name: Run platformIO
         run: platformio check && platformio run
 
+      - name: Running Test
+        run: |
+          platfromio test -e native
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
@@ -46,11 +50,4 @@ jobs:
           name: firmware.bin
           path: |
             .pio/build/esp32doit-devkit-v1/firmware.bin
-
-  test:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Running Test
-        run: echo done
+      
