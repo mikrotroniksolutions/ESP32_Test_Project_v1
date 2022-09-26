@@ -12,9 +12,9 @@ rm -f "$OUTPUT"
 
 # create zip
 7z a "$OUTPUT" \
-	-xr!.vs \
-	src \
+    -xr!.vs \
+    src \
     lib \
     include \
     test \
-	README.md \
+    README.md
