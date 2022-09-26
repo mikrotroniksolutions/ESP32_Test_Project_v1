@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  release:
+    name: Create release
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set variables
+        id: init
+        run: |
+          echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
+          echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Arduino package
+        id: arduino
+        run: |
+          FILENAME=ESP32_Test_Project-${{ steps.init.outputs.tag }}.zip
+          extras/scripts/build-arduino-package.sh . "$FILENAME"
+          echo ::set-output name=filename::$FILENAME
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          bodyFile: ${{ steps.body.outputs.filename }}
+          draft: true
+          name: ArduinoJson ${{ steps.init.outputs.version }}
+          artifacts: ${{ steps.arduino.outputs.filename }}
+          token: ${{ secrets.GITHUB_TOKEN }}
