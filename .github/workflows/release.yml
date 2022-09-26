@@ -29,7 +29,7 @@ jobs:
           # include \
           # test \
           # README.md
-          extras/scripts/build-single-header.sh src/ArduinoJson.hpp "$FILENAME"
+          extras/scripts/build-arduino-package.sh . "$FILENAME"
           echo ::set-output name=filename::$FILENAME
       - name: Create release
         uses: ncipollo/release-action@v1
