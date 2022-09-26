@@ -9,4 +9,4 @@
   - [ ] Native
 - [ ] clangtidy
 - [ ] codecov.io
-- [ ] github actions
+- [x] github actions
