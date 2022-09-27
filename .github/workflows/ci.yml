@@ -37,14 +37,16 @@ jobs:
       - name: Running Test
         run: |
           platformio test -e native
-          pip install gcovr
-          gcovr -r . -e ".pio/" -o cov.xml
+          sudo apt-get install -y lcov ninja-build
+          pip install lcov_cobertura
+          lcov --capture --no-external --directory . --output-file coverage.info
+          lcov_cobertura coverage.info
           
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           # gcov: true
-          files: ./cov.xml
+          files: ./coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           verbose: true # optional (default = false)
       - name: Artifact
