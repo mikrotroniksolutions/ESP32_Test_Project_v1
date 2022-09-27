@@ -39,8 +39,9 @@ jobs:
           platformio test -e native
           sudo apt-get install -y lcov ninja-build
           pip install lcov_cobertura
-          lcov --capture --no-external --directory . --output-file coverage.info -e test/
-          lcov_cobertura coverage.info
+          lcov --capture --no-external --directory . --output-file coverage.info 
+          lcov --remove coverage.info 
+          lcov_cobertura coverage.info "test/"
           
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
