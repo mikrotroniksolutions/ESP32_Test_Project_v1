@@ -37,7 +37,6 @@ jobs:
       - name: Running Test
         run: |
           platformio test -e native
-          chmod
           pip install gcovr
           gcovr -r . -e ".pio/" -o cov.xml
           
