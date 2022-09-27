@@ -37,13 +37,14 @@ jobs:
       - name: Running Test
         run: |
           platformio test -e native
+          chmod
           pip install gcovr
           gcovr -r . -e ".pio/" -o cov.xml
           
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          gcov: true
+          # gcov: true
           files: ./cov.xml
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           verbose: true # optional (default = false)
