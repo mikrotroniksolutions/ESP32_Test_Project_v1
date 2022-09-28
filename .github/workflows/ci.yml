@@ -49,13 +49,13 @@ jobs:
       - name: Build
         run: platformio run
 
-      - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.27.0
-        with:
-          config_path: .github/workflows/.spellcheck.yml
-          source_files: README.md CHANGELOG.md notes/Notes.md
-          task_name: Markdown
-          output_file: spellcheck-output.txt
+      # - name: Spellcheck
+      #   uses: rojopolis/spellcheck-github-actions@0.27.0
+      #   with:
+      #     config_path: .github/workflows/.spellcheck.yml
+      #     source_files: README.md CHANGELOG.md notes/Notes.md
+      #     task_name: Markdown
+      #     output_file: spellcheck-output.txt
       
       - name: Running [test]
         run: |
@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/artifact
           mv .pio/build/esp32doit-devkit-v1/firmware.bin ${{ github.workspace }}/artifact/firmware.bin
-          mv spellcheck-output.txt ${{ github.workspace }}/artifact/spellcheck-output.txt
+          # mv spellcheck-output.txt ${{ github.workspace }}/artifact/spellcheck-output.txt
       - uses: actions/upload-artifact@v2
         with:
           name: Build Artifacts
