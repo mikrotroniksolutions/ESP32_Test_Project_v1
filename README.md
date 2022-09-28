@@ -4,9 +4,9 @@
 
 ## TODO
 
-- [ ] Google Test
-  - [ ] ESP32
-  - [ ] Native
-- [ ] clangtidy
-- [ ] codecov.io
+- [x] Google Test
+  - [x] ESP32
+  - [x] Native
+- [x] clangtidy
+- [x] codecov.io
 - [x] github actions
