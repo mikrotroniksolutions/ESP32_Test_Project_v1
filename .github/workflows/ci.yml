@@ -66,7 +66,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/artifact
           mv .pio/build/esp32doit-devkit-v1/firmware.bin ${{ github.workspace }}/artifact/firmware.bin
           mv spellcheck-output.txt ${{ github.workspace }}/artifact/spellcheck-output.txt
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: Build Artifacts
           path: |
