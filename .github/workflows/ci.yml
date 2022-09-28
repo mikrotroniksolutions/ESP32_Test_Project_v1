@@ -70,7 +70,7 @@ jobs:
         with:
           name: Build Artifacts
           path: |
-            ${{ github.workspace }}/artifact/
+            ${{ github.workspace }}/artifact/**/*
 
   codecov:
     runs-on: ubuntu-latest
