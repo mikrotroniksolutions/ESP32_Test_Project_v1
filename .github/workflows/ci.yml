@@ -49,6 +49,14 @@ jobs:
       - name: Build
         run: platformio run
 
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.27.0
+        name: Spellcheck
+        with:
+          source_files: README.md CHANGELOG.md notes/Notes.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
+      
       - name: Running [test]
         run: |
           platformio test -e native
@@ -56,8 +64,9 @@ jobs:
       - name: Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: firmware.bin
+          name: Build Artifacts
           path: |
+            spellcheck-output.txt
             .pio/build/esp32doit-devkit-v1/firmware.bin
 
   codecov:
