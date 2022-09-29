@@ -9,6 +9,7 @@ jobs:
       image: sglahn/platformio-core:latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Checking PIO
-        runs: |
+        run: |
           platformio pkg update
