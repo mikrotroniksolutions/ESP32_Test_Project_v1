@@ -12,4 +12,5 @@ jobs:
 
       - name: Checking PIO
         run: |
-          platformio pkg update
+          pio --version
+          pio run
