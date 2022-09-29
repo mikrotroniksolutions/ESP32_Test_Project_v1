@@ -11,4 +11,4 @@ jobs:
       - uses: docker://sglahn/platformio-core:latest
       - name: check version
         run: 
-          -v
+          pio -v
