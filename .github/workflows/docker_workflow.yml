@@ -5,8 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: sglahn/platformio-core:latest
-      image: node:14.15.0-alpine3.12
+    container:
+      image: sglahn/platformio-core:latest
     steps:
       - uses: actions/checkout@v2
       - name: Checking PIO
