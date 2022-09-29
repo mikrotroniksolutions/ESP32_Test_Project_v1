@@ -5,9 +5,10 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: node:14.15.0-alpine3.12
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://sglahn/platformio-core:latest
-        with:
-          args: update,run
+      - name: Checking PIO
+        runs: |
+          platformio pkg update
