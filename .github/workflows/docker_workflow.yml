@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://sglahn/platformio-core:latest
+      - uses: docker://sglahn/platformio-core:6.1.4
         with:
           args: run
