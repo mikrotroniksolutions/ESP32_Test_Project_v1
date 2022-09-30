@@ -6,7 +6,6 @@
 
 - spelliing check
 
-
 ## TODO
 
 - [x] Google Test
