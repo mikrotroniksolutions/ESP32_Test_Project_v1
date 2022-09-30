@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: sglahn/platformio-core:latest
+      image: petewall/platformio:6.1.4
     steps:
       - uses: actions/checkout@v2
 
       - name: Checking PIO
         run: |
-          pio upgrade
+          # pio upgrade
           pio run
