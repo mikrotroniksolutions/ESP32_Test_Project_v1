@@ -4,7 +4,7 @@
 
 ## Spell check
 
-- spelliing check
+- spelliing check.
 
 ## TODO
 
