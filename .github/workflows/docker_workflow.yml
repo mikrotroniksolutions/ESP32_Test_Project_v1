@@ -12,5 +12,4 @@ jobs:
 
       - name: Checking PIO
         run: |
-          # pio upgrade
           pio run
