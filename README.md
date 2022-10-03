@@ -14,4 +14,3 @@
 - [x] clangtidy
 - [x] codecov.io
 - [x] github actions
-- [ ] Optimize workflow
