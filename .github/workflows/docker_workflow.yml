@@ -12,4 +12,4 @@ jobs:
 
       - name: Checking PIO
         run: |
-          pio platform
+          pio platform list
