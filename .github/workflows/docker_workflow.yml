@@ -6,10 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: mariolopjr/pio:latest
+      image: ajaymikrotronik/platformio:latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Checking PIO
         run: |
-          pio platform list
+          pio pkg list -g
