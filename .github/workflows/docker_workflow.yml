@@ -6,10 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ajaymikrotronik/platformio:latest
+      image: ajaymikrotronik/test:latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Checking PIO
         run: |
-          pio run
+          pwd
+          pio pkg list -g
+          pio check
