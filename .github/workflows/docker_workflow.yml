@@ -12,6 +12,8 @@ jobs:
 
       - name: Checking PIO
         run: |
+          pwd
           ls -a
           cd /root/.platformio/packages
+          pwd
           ls -a
